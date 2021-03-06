@@ -4,7 +4,7 @@ const fs = require('fs');
 const config = require('./config.json');
 client.config = config;
 
-// Init discord giveaways
+// package discord giveaways
 const { GiveawaysManager } = require('discord-giveaways');
 client.giveawaysManager = new GiveawaysManager(client, {
     storage: "./database.json",
@@ -15,9 +15,8 @@ client.giveawaysManager = new GiveawaysManager(client, {
         reaction: "🎉"
     }
 });
-//Coded by Zero
 
-/* Load all events */
+/* events handler */
 fs.readdir("./events/", (_err, files) => {
     files.forEach((file) => {
         if (!file.endsWith(".js")) return;
@@ -31,7 +30,7 @@ fs.readdir("./events/", (_err, files) => {
 
 client.commands = new Discord.Collection();
 
-/* Load all commands */
+/* commands handler */
 fs.readdir("./commands/", (_err, files) => {
     files.forEach((file) => {
         if (!file.endsWith(".js")) return;
@@ -42,5 +41,4 @@ fs.readdir("./commands/", (_err, files) => {
     });
 });
 
-// Login through the client
 client.login(process.env.TOKEN);
