@@ -1,5 +1,5 @@
 {
-  "name": "GiveawayBot made by pika",
+  "name": "GiveawayBot",
   "version": "2.0.0",
   "description": "bot made using discord-giveaways package in discord.js",
   "main": "index.js",
